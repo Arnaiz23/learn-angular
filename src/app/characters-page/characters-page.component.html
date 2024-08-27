@@ -1,0 +1,17 @@
+<h1>Dragonball Characters</h1>
+
+<section>
+    @if (isLoading) {
+        <p>Loading...</p>
+    } @else {
+        @for (character of characters; track character.id) {
+            <app-character-card
+                [name]="character.name"
+                [image]="character.image"
+                [id]="character.id"
+            ></app-character-card>
+        } @empty {
+            <p>No characters...</p>
+        }
+    }
+</section>
